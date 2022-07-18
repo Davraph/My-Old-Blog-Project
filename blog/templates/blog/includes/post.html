@@ -1,0 +1,15 @@
+{% load hitcount_tags %}
+                <li>
+                 <article class="post">
+                     <a href="{% url "post-detail-page" post.slug %}">
+                     <img src="{{ post.image.url }}" alt="{{ post.title }}"/>
+                     <div class="post__content">
+                        <h3>{{ post.title }}| {% get_hit_count for post %}</h3>
+                         <p>views: {% get_hit_count for post %}</p>
+                        <p>
+                            {{ post.excerpt }}
+                         </p>
+                     </div>
+                     </a>
+                 </article>
+             </li>
